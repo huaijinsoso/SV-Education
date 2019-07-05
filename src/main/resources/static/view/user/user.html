@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <script src="/framework/head/head.js"></script>
+    <script src="/view/user/user.js"></script>
+</head>
+<body>
+
+<!------------------------------------------------用户管理信息展示--------------------------------------------->
+<div class="easyui-layout" data-options="fit: true,border:false">
+    <div data-options="region: 'north',border:false" style="height: 33px;padding-left: 10px;padding-top: 5px;">
+        <div class="easyui-toolbar">
+            <label>
+                用户名：
+                <input id="userName" class="easyui-validatebox" name="userName" />
+            </label>
+            <a id="lbtn_search" class="easyui-linkbutton" data-options="plain: true, iconCls: 'icon-search'">查询</a>
+            <a id="lbtn_reset" class="easyui-linkbutton" data-options="plain: true, iconCls: 'icon-reset'">重置</a>
+        </div>
+    </div>
+    <div data-options="iconCls:'icon-standard-application-view-list',region: 'center',border:false">
+        <table id="grid_user"></table>
+    </div>
+</div>
+
+<!------------------------------------------------用户信息增加和修改--------------------------------------------->
+<div id="win_user_add" style="padding:5px;">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'center'" style="padding:10px;">
+            <form id="form_user" method="post" style="width: 100%">
+                <input type="hidden"  id="userId" name="userId" />
+                <table style="width: 100%" border="0" class="table">
+                    <tr>
+                        <td  class="table-L-bg" width="24%">
+                            <span>*</span>
+                            <label for="userName">用户名：</label>
+                        </td>
+                        <td>
+                            <input type="text" class="easyui-validatebox" id="userName" name="userName" data-options="required:true"/>
+                        </td>
+                    </tr>
+
+                   <tr>
+                       <td  class="table-L-bg">
+                           <span>*</span>
+                           <label for="password">密码：</label>
+                       </td>
+                       <td colspan="2">
+                           <input type="text" class="easyui-validatebox" id="password" name="password" data-options="required:true"/>
+                       </td>
+                   </tr>
+               <tr>
+                       <td class="table-L-bg">
+                           <span>*</span>
+                           <label for="age">年龄：</label>
+                       </td>
+                       <td colspan="2">
+                           <input type="text" class="easyui-validatebox" id="age" name="age" data-options="required:true"/>
+
+                       </td>
+                   </tr>
+
+                </table>
+            </form>
+        </div>
+        <div data-options="region:'south',border:false" style="text-align:center;margin-top:5px;height:32px">
+            <input id="lbtn_userSave" type="button" value="保存" class="btn_2text btn_save"/>
+            <input id="lbtn_userClose" type="button" value="关闭" class="btn_2text btn_close"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
