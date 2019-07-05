@@ -21,7 +21,7 @@ public interface StudentDao {
     @Update("update student set checkResult = #{checkResult} where studentId = #{studentId}")
     int updateByPrimaryKey(Student record);
 
-    @Select("<script>select *  from student where 1 = 1 <when test='schoolId!=null'> and schoolId like CONCAT('%','${studentName}','%' ) </when> limit ${first},${rows}</script>")
+    @Select("<script>select *  from student where 1 = 1 limit ${first},${rows}</script>")
     List<Student> selectByPage(Student record);
 
     @Select("select count(*) from student")

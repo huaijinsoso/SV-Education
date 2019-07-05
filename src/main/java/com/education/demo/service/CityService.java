@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface CityService {
 	
+	
+	
 	 List<City> queryCity(City city);
 	
 	 City queryCityById(int id);

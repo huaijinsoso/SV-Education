@@ -16,18 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.education.demo.entity.Page;
 
-/**
- * 控制器基�? *
- * 
- * @author LRH
- * @version 2014-02-25 Controller层命名规�?业务�?save 新增 业务�?delete 删除 业务�?update 更新
- *          业务�?find 查询 业务�?import 导入 业务�?export 导出 业务�?upload 上传（附件）
- *          业务�?download 下载（附件） 业务�?chgstate 包括启用禁用 /userManage 账号管理 /authorize
- *          授权 /attestation 认证 /j_spring_security_logout 登出
- *          /j_spring_security_check 登陆 PS：注意只针对具体业务，加载公用组件操作都不记录，
- *          反例：system/organization/listUnit加载组织树，不记�? *
- *          不可写成：system/organization/listUnit/find
- */
 public abstract class BaseController {
     
     private final Logger logger = Logger.getLogger("BaseController");
@@ -69,17 +57,7 @@ public abstract class BaseController {
         model.addAttribute("_msg", sb.toString());
     }
     
-    /**
-     * 添加Flash消息
-     *
-     */
-    /*
-     * protected void addMessage(RedirectAttributes redirectAttributes,
-     * String... messages) { StringBuilder sb = new StringBuilder(); for (String
-     * message : messages) { sb.append(message).append(messages.length > 1 ?
-     * "<br/>" : ""); } redirectAttributes.addFlashAttribute("message",
-     * sb.toString()); }
-     */
+
 
 
     

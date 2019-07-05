@@ -4,7 +4,7 @@ public class SchoolUser extends Page {
     private int suserId;
     private int schoolId;
     private String suserName;
-    private int sPassword;
+    private String sPassword;
 
     public int getSuserId() {
         return suserId;
@@ -30,11 +30,11 @@ public class SchoolUser extends Page {
         this.suserName = suserName;
     }
 
-    public int getsPassword() {
+    public String getsPassword() {
         return sPassword;
     }
 
-    public void setsPassword(int sPassword) {
+    public void setsPassword(String sPassword) {
         this.sPassword = sPassword;
     }
 }

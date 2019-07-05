@@ -1,33 +1,33 @@
 package com.education.demo.controller;
 
-import com.education.demo.entity.Project;
+import com.education.demo.entity.Notice;
 import com.education.demo.entity.Page;
-import com.education.demo.service.ProjectService;
+import com.education.demo.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/projectController")
-public class ProjectController extends BaseController{
+@RequestMapping("/noticeController")
+public class NoticeController extends BaseController{
     @Autowired
-    private ProjectService projectService;
+    private NoticeService noticeService;
 
     @RequestMapping("list")
     @ResponseBody
-    public Object queryProjectList(Project project) {
+    public Object queryNoticeList(Notice notice) {
         Page page = getPage();
-        page = projectService.findProject4Page(project, page);
+        page = noticeService.findNotice4Page(notice, page);
         return this.setResultData(page.getRecords(), page.getGridObjectData());//转换成JSON
     }
 
     @RequestMapping("opt")
     @ResponseBody
-    public Object optProject(Project project) {
+    public Object optNotice(Notice notice) {
 
         try {
-            projectService.operationProject(project);
+            noticeService.operationNotice(notice);
             return this.setSucceedResultMessage("成功");
         }
         catch (Exception e) {
@@ -39,9 +39,9 @@ public class ProjectController extends BaseController{
 
     @RequestMapping("del")
     @ResponseBody
-    public Object delProject(int projectId) {
+    public Object delNotice(int id) {
         try {
-            projectService.deleteProject(projectId);
+            noticeService.deleteNotice(id);
             return this.setSucceedResultMessage("成功");
         }
         catch (Exception e) {
@@ -53,7 +53,7 @@ public class ProjectController extends BaseController{
 
     @RequestMapping("edit")
     @ResponseBody
-    public Object editProject(int projectId) {
-        return projectService.queryProjectById(projectId);
+    public Object editNotice(int id) {
+        return noticeService.queryNoticeById(id);
     }
 }

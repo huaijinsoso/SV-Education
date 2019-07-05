@@ -9,7 +9,7 @@ public interface CityUserDao {
     @Delete("delete from city_user where cuserId = #{cuserId}")
     int deleteByPrimaryKey(@Param("cuserId") int cuserId);
 
-    @Insert("INSERT INTO city_user(cityId,cuserName,cPassword) VALUES (#{cuserId},#{cuserName},#{cPassword})")
+    @Insert("insert into city_user(cityId,cuserName,cPassword) values(#{cityId},#{cuserName},#{cPassword})")
     @Options(useGeneratedKeys = true, keyProperty = "cuserId")
     int insert(CityUser record);
 

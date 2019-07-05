@@ -20,7 +20,7 @@ public interface ConditionDao {
     @Update("update school_condition set checkResult = #{checkResult} where schoolConId = #{schoolConId}")
     int updateByPrimaryKey(Condition record);
 
-    @Select("<script>select *  from school_condition where 1 = 1 <when test='conditionName!=null'> and conditionName like CONCAT('%','${conditionName}','%' ) </when> limit ${first},${rows}</script>")
+    @Select("<script>select *  from school_condition where 1 = 1 limit ${first},${rows}</script>")
     List<Condition> selectByPage(Condition record);
 
     @Select("select count(*) from school_condition")

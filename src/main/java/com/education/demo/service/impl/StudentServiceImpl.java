@@ -4,12 +4,14 @@ import com.education.demo.dao.StudentDao;
 import com.education.demo.entity.Student;
 import com.education.demo.entity.Page;
 import com.education.demo.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
+    @Autowired
     private StudentDao studentDao;
     @Override
     public List<Student> queryStudent(Student student) {

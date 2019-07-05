@@ -3,7 +3,8 @@ package com.education.demo.entity;
 public class CityUser extends Page{
     private int cuserId;
     private int cityId;
-    private  String cuserName;
+    private String cuserName;
+    private String cPassword;
 
     public int getCuserId() {
         return cuserId;
@@ -29,14 +30,12 @@ public class CityUser extends Page{
         this.cuserName = cuserName;
     }
 
-    public int getcPassword() {
+    public String getcPassword() {
         return cPassword;
     }
 
-    public void setcPassword(int cPassword) {
+    public void setcPassword(String cPassword) {
         this.cPassword = cPassword;
     }
-
-    private int cPassword;
 
 }

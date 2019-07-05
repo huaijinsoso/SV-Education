@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/SpecialtyController")
+@RequestMapping("/specialtyController")
 public class SpecialtyController extends BaseController{
     @Autowired
     private SpecialtyService specialtyService;

@@ -1,7 +1,7 @@
 package com.education.demo.controller;
 
-import com.education.demo.entity.ProSchedule;
 import com.education.demo.entity.Page;
+import com.education.demo.entity.ProSchedule;
 import com.education.demo.service.ProScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,9 +39,9 @@ public class ProScheduleController extends BaseController{
 
     @RequestMapping("del")
     @ResponseBody
-    public Object delProSchedule(int proScheduleId) {
+    public Object delProSchedule(int id) {
         try {
-            proScheduleService.deleteProSchedule(proScheduleId);
+            proScheduleService.deleteProSchedule(id);
             return this.setSucceedResultMessage("成功");
         }
         catch (Exception e) {
@@ -53,7 +53,7 @@ public class ProScheduleController extends BaseController{
 
     @RequestMapping("edit")
     @ResponseBody
-    public Object editProSchedule(int proScheduleId) {
-        return proScheduleService.queryProScheduleById(proScheduleId);
+    public Object editProSchedule(int id) {
+        return proScheduleService.queryProScheduleById(id);
     }
 }
